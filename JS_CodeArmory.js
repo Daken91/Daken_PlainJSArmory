@@ -42,3 +42,7 @@ if(minus) 数値 *= -1;
 //配列内の前からi個／後ろからi個を選んで表示する
 配列.slice(0,i);
 配列.slice(-i);
+
+//ローマ数字（String）変換して算用数字に変換
+s = s.replace(/IV/g, '4,').replace(/IX/g, '9,').replace(/XL/g, '40,').replace(/XC/g, '90,').replace(/CD/g, '400,').replace(/CM/g, '900,').replace(/I/g, '1,').replace(/V/g, '5,').replace(/X/g, '10,').replace(/L/g, '50,').replace(/C/g, '100,').replace(/D/g, '500,').replace(/M/g, '1000,').split(",");
+var sum = s.filter(function(value){if(value !== "") return value; }).map(function(value){ return parseInt(value); }).reduce(function(all, value){ return all + value; });
