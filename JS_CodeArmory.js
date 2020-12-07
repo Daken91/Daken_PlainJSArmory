@@ -46,3 +46,16 @@ if(minus) 数値 *= -1;
 //ローマ数字（String）変換して算用数字に変換
 s = s.replace(/IV/g, '4,').replace(/IX/g, '9,').replace(/XL/g, '40,').replace(/XC/g, '90,').replace(/CD/g, '400,').replace(/CM/g, '900,').replace(/I/g, '1,').replace(/V/g, '5,').replace(/X/g, '10,').replace(/L/g, '50,').replace(/C/g, '100,').replace(/D/g, '500,').replace(/M/g, '1000,').split(",");
 var sum = s.filter(function(value){if(value !== "") return value; }).map(function(value){ return parseInt(value); }).reduce(function(all, value){ return all + value; });
+
+//2次元配列を要素すべて1次元配列へ　EX: [[1,2], [4,7]] → [1,2,4,7]
+for(var i=0;i<2次元配列.length;i++){
+    for(var j=0;j<2次元配列[i].length;j++){
+      1次元配列.push(2次元配列[i][j]);
+    }
+  }
+//↓パクリ元→ https://leetcode.com/problems/diagonal-traverse-ii/discuss/597911/Javascript-O(n)-unshift
+2次元配列.concat.apply([], 2次元配列);
+
+//配列内（文字列内）の特定文字の文字数を返す
+//パクリ元→ https://qiita.com/simiraaaa/items/13b87190e9e1afc23e81
+配列.split(文字).length - 1;
